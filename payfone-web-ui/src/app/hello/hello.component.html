@@ -1,0 +1,14 @@
+<!-- *ngIf here means don't show any content until we have the {{response}} -->
+<div class="page-container">
+    <div class="heading">Hello</div>
+    
+    <div id="response" *ngIf="response">
+        <p>{{response}}</p>
+    </div>
+</div>
+
+<div class="home">
+    <a [routerLink]="['/']">Home</a>
+</div>
+
+<ngx-ui-loader></ngx-ui-loader>

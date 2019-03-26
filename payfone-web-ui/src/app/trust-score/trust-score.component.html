@@ -1,0 +1,51 @@
+<div class="page-container">
+    <div class="heading">Trust Score</div>
+
+    <!-- Good example of Angular Form/Template
+        https://alligator.io/angular/template-driven-forms/
+
+        This form makes use of bootstrap.css styles
+    -->
+    <div id="trust-score-request" *ngIf="!response">
+        <form (ngSubmit)="getTrustScore()" #trustScoreForm="ngForm">
+            <label for="inputPhoneNumber">Phone Number</label>
+            <input type="text" class="form-control" id="inputPhoneNumber" name="inputPhoneNumber" required [(ngModel)]="model.inputPhoneNumber" #inputPhoneNumber="ngModel" />
+
+            <div [hidden]="inputPhoneNumber.valid || inputPhoneNumber.pristine" class="alert alert-danger">Phone Number is required</div>
+
+            <div class="a-little-padding-to-the-top">
+                <button type="submit" class="btn btn-primary" [disabled]="!trustScoreForm.form.valid">Submit</button>
+            </div>
+        </form>
+    </div>
+
+    <div id="trust-score-response" *ngIf="response">
+        <div id="score">
+            <div class="element" id="phone-number">
+                <label>Phone Number:</label> {{phoneNumber}}
+            </div>
+            <div class="element">
+                <label>Line Type:</label> {{lineType}}
+            </div>
+            <div class="element">
+                <label>Carrier:</label> {{carrier}}
+            </div>
+        </div>
+
+        <div id="score-indicator">
+            <div id="score-meter">
+                <!-- <circle-progress [title]="950" [percent]="85"></circle-progress> -->
+                <circle-progress title={{trustScore}} percent={{percent}} outerStrokeColor={{outerStrokeColor}} innerStrokeColor={{innerStrokeColor}}></circle-progress>
+            </div>
+        </div>
+        <div class="a-little-padding-to-the-top">
+            <a href="" (click)="clear($event)">Score Another Phone Number</a>
+        </div>
+    </div>
+</div>
+
+<div class="home">
+    <a [routerLink]="['/']">Home</a>
+</div>
+
+<ngx-ui-loader></ngx-ui-loader>

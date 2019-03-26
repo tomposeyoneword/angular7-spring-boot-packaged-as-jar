@@ -1,0 +1,54 @@
+#trust-score-request {
+    form {
+        padding-left: 1em;
+        padding-top: 2em;
+        label {
+            font-weight: bold;
+        }
+        input {
+            width: 10em;
+        }
+        button[type=submit] {
+            margin-top: 5px;
+        }
+        .ng-valid[required],
+        .ng-valid.required {
+            border-left: 5px solid #42A948;
+        }
+        .ng-invalid:not(form) {
+            border-left: 5px solid #a94442;
+        }
+        .a-little-padding-to-the-top {
+            padding-top: 20px;
+        }
+    }
+}
+
+#trust-score-response {
+    padding-left: 1em;
+    #score {
+        float: left;
+        padding-right: 10%;
+        fieldset {
+            min-height: 10em;
+        }
+        label {
+            font-weight: bold;
+            width: 8em;
+        }
+        div.element {
+            padding-bottom: 10px;
+        }
+        div.element#phone-number {
+            padding-top: 1.5em;
+        }
+    }
+    #score-indicator {
+        #score-meter {
+            margin-top: 1em;
+        }
+    }
+    .a-little-padding-to-the-top {
+        padding-top: 5em;
+    }
+}

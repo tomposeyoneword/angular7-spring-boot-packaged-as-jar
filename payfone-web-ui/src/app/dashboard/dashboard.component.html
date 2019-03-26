@@ -1,0 +1,27 @@
+<div class="page-container">
+    <ul id="services">
+        <li id="top">
+            <div class="text">Services</div>
+        </li>
+        <li>
+            <a [routerLink]="['/hello']" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+                <div class="text">Hey There!</div>
+            </a>
+        </li>
+        <li>
+            <a [routerLink]="['/trust-score']" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+                <div class="text">Trust Score</div>
+            </a>
+        </li>
+        <li>
+            <a [routerLink]="['/identity-verification']" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+                <div class="text">Identity Verification</div>
+            </a>
+        </li>
+        <li id="bottom">
+            <a [routerLink]="['/']" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+                <div class="text">TBD</div>
+            </a>
+        </li>
+    </ul>
+</div>
